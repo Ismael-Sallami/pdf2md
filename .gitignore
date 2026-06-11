@@ -1,0 +1,22 @@
+# entorno virtual
+.venv/
+venv/
+env/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# salidas del conversor
+output/
+*_md/
+images/
+attachments/
+output.md
+
+# SO / editor
+.DS_Store
+.idea/
+.vscode/
