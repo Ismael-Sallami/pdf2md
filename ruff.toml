@@ -1,0 +1,8 @@
+# Lint rules the CI enforces. Deliberately the core set: pyflakes for real dead
+# code and pycodestyle for layout. The converter catches broad exceptions on
+# purpose, because a malformed page should not abort a 300-page document, so the
+# rules that complain about that are not enabled.
+line-length = 100
+
+[lint]
+select = ["E", "F", "W", "I"]

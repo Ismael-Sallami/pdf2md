@@ -1,4 +1,4 @@
-# entorno virtual
+# virtual environments
 .venv/
 venv/
 env/
@@ -8,15 +8,17 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .pytest_cache/
+.ruff_cache/
 
-# salidas del conversor
-output/
+# converter output. Anchored to the root on purpose: an unanchored `images/`
+# would also swallow anything the tests or the docs keep under that name.
+/output/
+/images/
+/attachments/
+/output.md
 *_md/
-images/
-attachments/
-output.md
 
-# SO / editor
+# OS and editors
 .DS_Store
 .idea/
 .vscode/

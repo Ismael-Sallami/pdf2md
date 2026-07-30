@@ -19,7 +19,6 @@ Uso:
 """
 
 import argparse
-import os
 import re
 import shutil
 import sys
@@ -151,15 +150,15 @@ def resolve_ocr_lang(lang: str) -> str:
     Devuelve la cadena de idiomas disponible (formato 'spa+eng') o "" si ninguno
     está instalado. Avisa una sola vez por idioma faltante.
     """
-    requested = [l for l in lang.split("+") if l]
+    requested = [code for code in lang.split("+") if code]
     try:
         available = set(pytesseract.get_languages(config=""))
     except Exception:
         # No se pudo consultar (Tesseract roto/ausente): probamos tal cual
         return lang
 
-    usable = [l for l in requested if l in available]
-    for missing in (l for l in requested if l not in available):
+    usable = [code for code in requested if code in available]
+    for missing in (code for code in requested if code not in available):
         if missing not in _ocr_lang_warned:
             _ocr_lang_warned.add(missing)
             print(
@@ -251,7 +250,6 @@ def convert_page(
     # ── 2. Texto enriquecido (PyMuPDF: bloques con font size) ─────────────────
     blocks = page_fitz.get_text("dict", flags=fitz.TEXT_PRESERVE_WHITESPACE)["blocks"]
 
-    inserted_tables = set()
     text_lines = []
 
     for block in blocks:
@@ -450,7 +448,7 @@ def convert(pdf_path: Path, output_dir: Path, use_ocr: bool, dpi: int, lang: str
 
     md_path.write_text(full_md, encoding="utf-8")
 
-    print(f"\n✅ Conversión completada:")
+    print("\n✅ Conversión completada:")
     print(f"   📝 Markdown  → {md_path}")
     if images_dir.exists():
         n_imgs = len(list(images_dir.iterdir()))
