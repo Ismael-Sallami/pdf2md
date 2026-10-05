@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ismael-sallami.github.io/pdf2md/sitemap.xml

@@ -1,15 +1,15 @@
-# pdf-to-md
+# pdf2md
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB)
 ![PyMuPDF](https://img.shields.io/badge/PyMuPDF-1.24-1a7f37)
-[![tests](https://img.shields.io/github/actions/workflow/status/Ismael-Sallami/pdf-to-md/ci.yml?branch=main&logo=github&label=tests)](https://github.com/Ismael-Sallami/pdf-to-md/actions/workflows/ci.yml)
+[![tests](https://img.shields.io/github/actions/workflow/status/Ismael-Sallami/pdf2md/ci.yml?branch=main&logo=github&label=tests)](https://github.com/Ismael-Sallami/pdf2md/actions/workflows/ci.yml)
 ![license](https://img.shields.io/badge/license-MIT-4c1)
 
 A command-line converter that turns a PDF into Markdown: headings taken from the font size,
 tables, embedded images, attachments and metadata, with optional OCR for scans.
 
 > There is a browser version for PDF, Word and Excel, with nothing to install:
-> [elblogdeismael.github.io/pdf2md](https://elblogdeismael.github.io/pdf2md/)
+> [ismael-sallami.github.io/pdf2md](https://ismael-sallami.github.io/pdf2md/)
 
 ## Context
 
